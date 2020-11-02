@@ -1,0 +1,31 @@
+CREATE TABLE policereport_test( 
+	id SERIAL NOT NULL,
+	url CHARACTER VARYING(100),
+	title CHARACTER VARYING(200),
+	header CHARACTER VARYING(200),
+	content TEXT,
+	district CHARACTER VARYING(100),
+	PRIMARY KEY(id)
+);
+CREATE TABLE relevant( 
+	id SERIAL NOT NULL,
+	sentence TEXT,
+	policereport_id INTEGER REFERENCES policereport(id),
+	PRIMARY KEY(id)
+);
+CREATE TABLE location( 
+	id SERIAL NOT NULL,
+	name CHARACTER VARYING(100),
+	policereport_id INTEGER REFERENCES policereport(id),
+	PRIMARY KEY(id)
+);
+\COPY policereport(id, url,title,content,header, district) FROM 'pathTo/policereport_psql.csv' DELIMITER ',' CSV HEADER;
+\COPY relevant(sentence, policereport_id) FROM 'pathTo/relevant_psql.csv' DELIMITER ',' CSV HEADER;
+\COPY location(name, policereport_id) FROM 'pathTo/location_psql.csv' DELIMITER ',' CSV HEADER;
+
+CREATE EXTENSION fuzzystrmatch;
+CREATE TEXT SEARCH DICTIONARY simple_german (TEMPLATE = pg_catalog.simple, STOPWORDS =german);
+CREATE TEXT SEARCH CONFIGURATION simple_german (copy=german);
+ALTER TEXT SEARCH CONFIGURATION simple_german
+ALTER MAPPING FOR asciihword, asciiword, hword, hword_asciipart, hword_part, word
+WITH simple_german;
