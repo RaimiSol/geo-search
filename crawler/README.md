@@ -1,2 +1,2 @@
-# poogle
-HTW Berlin 2018/19 Webcrawling Project
+# Crawler
+Downloads policereports from Berlin to a JSON-file.
