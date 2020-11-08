@@ -1,2 +1,3 @@
-# Web Search Engine Frontend
+# Geo Search Frontend
+
 Implementation of a web interface for a search engine.

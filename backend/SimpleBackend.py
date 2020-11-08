@@ -41,7 +41,7 @@ def connect(user, password, db, host='localhost', port=5432):
     meta.reflect()
     return con, meta
 
-con, meta = connect('local', 'SecureDB', 'local')
+con, meta = connect('dbuser', 'SecureDB', 'websearchengine')
 
 
 

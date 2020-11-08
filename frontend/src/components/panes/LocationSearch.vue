@@ -49,11 +49,6 @@
           />
         </el-col>
       </el-row>
-      <el-row type="flex" justify="center">
-        <el-col :span="16">
-          <WordCloud :location="this.selectedLocation" />
-        </el-col>
-      </el-row>
     </div>
     <div v-if="showDetails">
       <div
@@ -194,20 +189,19 @@
 </template>
 
 <script>
-import CustomMap from '@/components/CustomMap.vue'
-import CustomPoliceReport from '@/components/CustomPoliceReport.vue'
 import axios from 'axios'
 import { featureCollection, center, point } from 'turf/turf'
-import Wappen from './Wappen.vue'
-import WordCloud from './WordCloud.vue'
+
+import CustomMap from '@/components/widgets/CustomMap.vue'
+import CustomPoliceReport from '@/components/widgets/CustomPoliceReport.vue'
+import Wappen from '@/components/widgets/Wappen.vue'
 
 export default {
   name: 'LocationSearch',
   components: {
     CustomMap,
     CustomPoliceReport,
-    Wappen,
-    WordCloud
+    Wappen
   },
   data() {
     return {

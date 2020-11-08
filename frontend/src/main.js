@@ -10,12 +10,16 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 
-Vue.component(VueWordCloud.name, VueWordCloud)
-Vue.use(ElementUI, { locale })
 Vue.config.productionTip = false
 
-delete L.Icon.Default.prototype._getIconUrl
+// vuewordcloud
+Vue.component(VueWordCloud.name, VueWordCloud)
 
+// element-ui
+Vue.use(ElementUI, { locale })
+
+// leaflet
+delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),

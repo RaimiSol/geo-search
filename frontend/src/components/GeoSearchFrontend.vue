@@ -18,10 +18,7 @@
       </el-header>
       <div class="right-margin">
         <el-tabs tab-position="left" style="padding: 20px">
-          <el-tab-pane label="Einfache Suche">
-            <BasicSearch />
-          </el-tab-pane>
-          <el-tab-pane label="Erweiterte Ortssuche">
+          <el-tab-pane label="Ortssuche">
             <LocationSearch />
           </el-tab-pane>
           <el-tab-pane label="Aktuelle Polizeimeldungen">
@@ -34,14 +31,12 @@
 </template>
 
 <script>
-import BasicSearch from '@/components/BasicSearch.vue'
-import LocationSearch from '@/components/LocationSearch.vue'
-import CustomRss from '@/components/CustomRss.vue'
+import LocationSearch from '@/components/panes/LocationSearch.vue'
+import CustomRss from '@/components/panes/CustomRss.vue'
 
 export default {
-  name: 'WebSearchEngineFrontend',
+  name: 'GeoSearchFrontend',
   components: {
-    BasicSearch,
     LocationSearch,
     CustomRss
   }

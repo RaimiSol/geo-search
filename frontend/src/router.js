@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import WebSearchEngineFrontend from '@/components/WebSearchEngineFrontend.vue'
+import GeoSearchFrontend from '@/components/GeoSearchFrontend.vue'
 
 Vue.use(Router)
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'WebSearchEngineFrontend',
-      component: WebSearchEngineFrontend
+      name: 'GeoSearchFrontend',
+      component: GeoSearchFrontend
     }
   ]
 })
