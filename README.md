@@ -1,4 +1,5 @@
 # GeoSearch
+
 Implementation of a basic geographical based search engine.
 
 AIM: Search for policereports or other texts by geographical phrases.
@@ -7,46 +8,47 @@ AIM: Search for policereports or other texts by geographical phrases.
 
 The main components are:
 
-* Frontend
-  * Framework: Vue
-  * Basic user interface for a search engine
-* Backend
-  * Framework: Flask
-  * Simple api that responds to requests from frontend and delivers requested data reading from a postgresql database
-* Crawler
-  * Framework: Scrapy
-  * Crawler writes policereports from https://www.berlin.de/polizei/polizeimeldungen/ to json
-* Database
-  * Postgresql
-  * Processed policereports were imported to a postgresql database
-* Data Processing
-  * Frameworks: Flair, Spacy
-  * Named Entity Recognition to extract geographical phrases from texts
-  
-## Mitmachen
+- Frontend
+  - Framework: Vue
+  - Basic user interface for a search engine
+- Backend
+  - Framework: Flask
+  - Simple api that responds to requests from frontend and delivers requested data reading from a postgresql database
+- Crawler
+  - Framework: Scrapy
+  - Crawler writes policereports from https://www.berlin.de/polizei/polizeimeldungen/ to json
+- Database
+  - Postgresql
+  - Processed policereports were imported to a postgresql database
+- Data Processing
+  - Frameworks: Flair, Spacy
+  - Named Entity Recognition to extract geographical phrases from texts
 
-Das Projekt macht Folgendes:
-- Ein mit Scrapy (Python-Framework) programmierter Crawler lädt automatisch Polizeiberichte von der Webseite https://www.berlin.de/polizei/polizeimeldungen/ in eine große JSON-Datei.
-- Die Polizeiberichte werden mit den NaturalLanguageProcessing-Frameworks "Spacy" und "Flair" verarbeitet, um automatisch geografische Phrasen zu erkennen.
-- Es wird ein inverser Index aufgebaut, um Polizeiberichte nach Ortsangaben suchen zu können.
-- Die Daten werden in eine Postgresql Datenbank geschrieben.
-- Die Datenbank wird von einem Flask (Python-Framework) Backend verwendet um eine Suche nach Polizeiberichten durch Angabe von Orten bereitzustellen.
-- Das Backend wird letztendlich von einer mit VueJS implementierten Weboberfläche angesprochen, in welchem eine Suche nach Polizeiberichten durch Angabe von Orten ermöglicht wird und die Orte einzelner Polizeiberichte werden auf einer Karte dargestellt.
+## Contribute
 
-Achtung:
-- Das Projekt ist eines meiner ersten gewesen und ist nicht nach BestPractices geschrieben.
-- Es enthält keine Dokumentation und kein Benutzerhandbuch.
-- Es enthält keine Tests.
-- Es sind bis auf das Frontend nur einzelne Python Skripte.
-- Zum Aufsetzen des Projekts fehlt noch eine Anleitung.
+The project does the following:
 
-Insgesamt bietet das Projekt keine idealen Bedingungen zum Einsteigen, dennoch ist es meiner Meinung nach eine spannende Anwendung die noch Potential für mehr hat.
+- A crawler programmed with Scrapy (Python framework) automatically loads police reports from the website https://www.berlin.de/polizei/polizeimeldungen/ into a large JSON file.
+- The police reports are processed using the natural language processing frameworks "Spacy" and "Flair" to automatically detect geographic phrases.
+- An inverse index is built to search police reports for location information.
+- The data is written to a Postgresql database.
+- The database is used by a Flask (Python framework) backend to provide a search for police reports by specifying locations.
+- The backend is ultimately accessed by a web interface implemented with VueJS, in which a search for police reports by specifying locations is enabled and the locations of individual police reports are displayed on a map.
 
-Ziele:
-- Anleitung zum Aufsetzen des Projekts erstellen.
-- Code aufbessern.
-- Tests schreiben.
-- Projekt generalisieren: Statt Polizeiberichte, beliebige Texte verwenden.
-- Funktionalität erweitern.
+### Attention:
 
-Bei Fragen oder Interesse meldet euch gerne bei mir über Discord oder rais22@zedat.fu-berlin.de
+- The project was one of my first and is not written according to best practices.
+- It does not contain any documentation or user manual.
+- It does not contain any tests.
+- There is no manual for setting up the project.
+- Overall, the project does not offer ideal conditions to get started, yet in my opinion it is an exciting application that has potential for more.
+
+### Objectives:
+
+- Create instructions for setting up the project.
+- Improve the code.
+- Write tests.
+- Generalize project: Instead of police reports, use arbitrary text.
+- Extend functionality.
+
+If you have questions or are interested, please contact me via Discord or rais22@zedat.fu-berlin.de
